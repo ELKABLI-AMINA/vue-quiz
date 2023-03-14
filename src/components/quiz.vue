@@ -7,7 +7,7 @@ const random = ref([])
 const i = ref(0)
 const done  = ref(false)
 const newnum = ref(null);
-const score = ref(0)
+const score = {score:0,incQuestions:[]}
 const option_selected = ref(false)
 const color = ref('btn-secondary')
 
@@ -24,12 +24,13 @@ randoomQuestions(quiz.length)
  const checkOption = (option_id)=>{
     option_selected.value=option_id
     if(quiz[random.value[currentQuestion.value]].answers.correct==option_id){
-       score.value++
+       score.score++
        color.value='btn-success'
     
 
     }else{
         color.value='btn-danger'
+        score.incQuestions.push(quiz[random.value[currentQuestion.value]])
 
     }
  }

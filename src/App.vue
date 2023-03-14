@@ -18,6 +18,7 @@ const showresult = (score)=>{
   fullScore.value.push(score)
   fullScore.value.push(quiz.value.length)
   currentComponent.value =  Result
+  currentStep.value = 3
 
 }
 </script>
